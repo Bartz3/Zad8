@@ -1,0 +1,33 @@
+﻿@page
+@model Zad8.Pages.Categories.ElementsOfCategoryModel
+@{
+    ViewData["Title"] = "Produkty kategori "+ @Model.Category.Name;
+}
+<h1>Produkty kategori @Model.Category.Name</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CommoditiesOfCategory[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommoditiesOfCategory[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CommoditiesOfCategory) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
